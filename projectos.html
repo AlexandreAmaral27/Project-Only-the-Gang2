@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projectos - Only The Gang</title>
+<link rel="stylesheet" href="estilo/style.css">
+<link rel="stylesheet" href="estilo/projectos.css">
+
+<!-- Fonte -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+<!-- Ícones -->
+<script src="https://unpkg.com/akar-icons-fonts"></script>
+
+<style>
+.music-player {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.music-player.active { bottom: 20px; }
+.track-cover { width: 45px; height: 45px; border-radius: 8px; object-fit: cover; box-shadow:0 0 8px rgba(0,0,0,0.5);}
+#progressBar { flex: 1; cursor: pointer; }
+.close-btn { background: transparent; border: none; color: #f44; font-size: 20px; cursor: pointer; }
+
+.equalizer { display: flex; align-items: flex-end; gap: 3px; width: 40px; height: 20px; }
+.equalizer span { display: block; width: 4px; background: #1cd8d2; height: 5px; border-radius: 2px; animation: bounce 1s infinite; }
+.equalizer span:nth-child(1) { animation-delay: 0s; }
+.equalizer span:nth-child(2) { animation-delay: 0.2s; }
+.equalizer span:nth-child(3) { animation-delay: 0.4s; }
+.equalizer span:nth-child(4) { animation-delay: 0.6s; }
+.equalizer span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes bounce { 0%,100%{height:5px;} 50%{height:20px;} }
+.equalizer.paused span { animation-play-state: paused; }
+</style>
+</head>
+<body>
+
+ <!-- Botão menu mobile -->
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div>
+        <div class="header">
+          <img src="imagem/logo.svg" alt="Logo" />
+          <h1>Only The Gang</h1>
+        </div>
+        <nav>
+          <a href="index.html" >
+            <i class="ai-home"></i>
+            <p>Home</p>
+          </a>
+          <a href="projectos.html">
+            <i class="ai-folder"></i>
+            <p>Projects</p>
+          </a>
+          <a href="team.html">
+            <i class="ai-person"></i>
+            <p>Team</p>
+          </a>
+          <a href="galeria.html">
+            <i class="ai-image"></i>
+            <p>Galeria</p>
+          </a>
+          <a href="contacto.html">
+            <i class="ai-envelope"></i>
+            <p>Contacto</p>
+          </a>
+        </nav>
+      </div>
+    </aside>
+<main class="content">
+<h2>Projetos</h2>
+<p>Confira alguns dos projetos da Only The Gang:</p>
+
+<div class="projects-grid">
+  <div class="project-card fade-up">
+    <img src="imagem/projeto1.jpg" alt="Projeto 1" />
+    <div class="info"><h3>Clipe Musical</h3><p>Produção audiovisual feita em parceria com artistas locais.</p></div>
+  </div>
+
+  <div class="project-card fade-up">
+    <img src="imagem/projeto2.jpg" alt="Projeto 2" />
+    <div class="info"><h3>EP Colaborativo</h3><p>Projeto colaborativo entre membros do grupo com várias faixas.</p></div>
+  </div>
+
+  <div class="project-card fade-up">
+    <img src="imagem/projeto3.jpg" alt="Projeto 3" />
+    <div class="info"><h3>Show ao Vivo</h3><p>Evento ao vivo realizado para a comunidade com grandes artistas.</p></div>
+  </div>
+</div>
+
+<!-- Players de áudio -->
+<audio id="audio-feboy" src="musicas/feboy.mp3"></audio>
+<audio id="audio-wisnay" src="musicas/wisnay.mp3"></audio>
+<audio id="audio-bruno" src="musicas/bruno.mp3"></audio>
+<audio id="audio-weslay" src="musicas/weslay.mp3"></audio>
+
+<!-- Projetos Solos -->
+<section class="projects solos">
+  <h3>Projects Solos</h3>
+  <div class="project-grid">
+    <a href="#" class="project-card fade-up" data-audio="audio-feboy">
+      <img src="imagem/a.roy_27/amaral.png" alt="Feboy Freezer" />
+      <div class="info"><h4>Feboy Freezer – Freestyle Sessions</h4></div>
+    </a>
+
+    <a href="#" class="project-card fade-up" data-audio="audio-wisnay">
+      <img src="imagem/galeria5.jpg" alt="Wisnay" />
+      <div class="info"><h4>Wisnay – "No Sleep"</h4></div>
+    </a>
+
+    <a href="#" class="project-card fade-up" data-audio="audio-bruno">
+      <img src="imagem/galeria6.jpg" alt="Bruno Rodas" />
+      <div class="info"><h4>Bruno Rodas – Single "Streets"</h4></div>
+    </a>
+
+    <a href="#" class="project-card fade-up" data-audio="audio-weslay">
+      <img src="imagem/galeria1.jpg" alt="Weslay no Beat" />
+      <div class="info"><h4>Weslay no Beat – Mixtape "Levels"</h4></div>
+    </a>
+  </div>
+</section>
+
+<!-- Player personalizado -->
+<div class="music-player" id="musicPlayer">
+  <img id="trackCover" src="" alt="Capa da música" class="track-cover">
+  <button id="playPauseBtn">▶️</button>
+  <input type="range" id="progressBar" value="0" step="1">
+  <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+  <div class="equalizer" id="equalizer">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <button id="closePlayerBtn" class="close-btn">✖</button>
+</div>
+
+<!-- Valores -->
+<section class="values">
+<h3>Nossos Valores</h3>
+<div class="values-grid">
+  <div class="value-card fade-up"><i class="ai-music-note"></i><h4>Musica</h4></div>
+  <div class="value-card fade-up"><i class="ai-people-group"></i><h4>Unidade</h4></div>
+  <div class="value-card fade-up"><i class="ai-star"></i><h4>Trap Lifestyle</h4></div>
+</div>
+</section>
+</main>
+
+<script>
+// Player
+const projectCards = document.querySelectorAll(".project-card[data-audio]");
+const musicPlayer = document.getElementById("musicPlayer");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+const closePlayerBtn = document.getElementById("closePlayerBtn");
+const equalizer = document.getElementById("equalizer");
+const trackCover = document.getElementById("trackCover");
+
+let currentAudio = null;
+let isPlaying = false;
+
+function formatTime(seconds){
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${minutes}:${secs<10?'0':''}${secs}`;
+}
+
+projectCards.forEach(card=>{
+  card.addEventListener("click", e=>{
+    e.preventDefault();
+    const audioId = card.dataset.audio;
+    const audio = document.getElementById(audioId);
+
+    if(currentAudio && currentAudio!==audio){
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    currentAudio = audio;
+    trackCover.src = card.querySelector("img").src;
+    musicPlayer.classList.add("active");
+    currentAudio.play().catch(err=>console.log("Clique para tocar áudio",err));
+    isPlaying = true;
+    playPauseBtn.textContent = "⏸️";
+    equalizer.classList.remove("paused");
+  });
+});
+
+playPauseBtn.addEventListener("click", ()=>{
+  if(!currentAudio) return;
+  if(isPlaying){
+    currentAudio.pause();
+    playPauseBtn.textContent = "▶️";
+    equalizer.classList.add("paused");
+  }else{
+    currentAudio.play();
+    playPauseBtn.textContent = "⏸️";
+    equalizer.classList.remove("paused");
+  }
+  isPlaying = !isPlaying;
+});
+
+setInterval(()=>{
+  if(currentAudio){
+    progressBar.value = currentAudio.currentTime;
+    progressBar.max = currentAudio.duration||0;
+    currentTimeEl.textContent = formatTime(currentAudio.currentTime);
+    durationEl.textContent = formatTime(currentAudio.duration||0);
+  }
+},500);
+
+progressBar.addEventListener("input", ()=>{
+  if(currentAudio) currentAudio.currentTime = progressBar.value;
+});
+
+closePlayerBtn.addEventListener("click", ()=>{
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+  isPlaying = false;
+  playPauseBtn.textContent = "▶️";
+  musicPlayer.classList.remove("active");
+  equalizer.classList.add("paused");
+});
+
+// Menu e animações
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+menuBtn.addEventListener("click", ()=>{ menuBtn.classList.toggle("active"); sidebar.classList.toggle("active"); });
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

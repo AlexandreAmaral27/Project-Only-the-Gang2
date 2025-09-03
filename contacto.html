@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Only The Gang</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="estilo/contacto.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ícones -->
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+
+    
+  </head>
+  <body>
+    <!-- Botão menu mobile -->
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div>
+        <div class="header">
+          <img src="imagem/logo.svg" alt="Logo" />
+          <h1>Only The Gang</h1>
+        </div>
+        <nav>
+          <a href="index.html">
+            <i class="ai-home"></i>
+            <p>Home</p>
+          </a>
+          <a href="projectos.html">
+            <i class="ai-folder"></i>
+            <p>Projects</p>
+          </a>
+          <a href="team.html">
+            <i class="ai-person"></i>
+            <p>Team</p>
+          </a>
+          <a href="galeria.html">
+            <i class="ai-image"></i>
+            <p>Galeria</p>
+          </a>
+          <a href="contacto.html">
+            <i class="ai-envelope"></i>
+            <p>Contacto</p>
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <h2>Contacto</h2>
+      <p>Para shows, colaborações ou parcerias, fala connosco:</p>
+
+      <div class="contact-container">
+
+          <div class="contact-box">
+            <i class="ai-whatsapp-fill"></i>
+            <h3>WhatsApp (Booking)</h3>
+            <p><a href="https://wa.me/244929764090" target="_blank">+244 929 764 090</a></p>
+          </div>
+       
+
+        <div class="contact-box">
+          <i class="ai-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:shows@onlythegang.com">shows@onlythegang.com</a></p>
+        </div>
+
+        <div class="contact-box">
+          <i class="ai-instagram-fill"></i>
+          <h3>Instagram</h3>
+          <p><a href="https://instagram.com/onlythegang" target="_blank">@onlythegang</a></p>
+        </div>
+
+        <div class="contact-box">
+          <i class="ai-youtube-fill"></i>
+          <h3>YouTube</h3>
+          <p><a href="https://youtube.com/onlythegang" target="_blank">Only The Gang Oficial</a></p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        sidebar.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

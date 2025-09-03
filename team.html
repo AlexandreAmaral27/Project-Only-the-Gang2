@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team - Only The Gang</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="estilo/midiaquerystyle.css">
+    <link rel="stylesheet" href="estilo/team.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+    <!-- Ícones -->
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+
+    
+  </head>
+  <body>
+    <!-- Botão menu mobile -->
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+     <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div>
+        <div class="header">
+          <img src="imagem/logo.svg" alt="Logo" />
+          <h1>Only The Gang</h1>
+        </div>
+        <nav>
+          <a href="index.html">
+            <i class="ai-home"></i>
+            <p>Home</p>
+          </a>
+          <a href="projectos.html">
+            <i class="ai-folder"></i>
+            <p>Projects</p>
+          </a>
+          <a href="team.html">
+            <i class="ai-person"></i>
+            <p>Team</p>
+          </a>
+          <a href="galeria.html">
+            <i class="ai-image"></i>
+            <p>Galeria</p>
+          </a>
+          <a href="contacto.html" class="active">
+            <i class="ai-envelope"></i>
+            <p>Contacto</p>
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Conteúdo -->
+<main class="content">
+    <h2>Nosso Team</h2>
+    <p>Conheça os integrantes da Only The Gang:</p>
+
+    <!-- Container dos perfis -->
+<div class="container-perfil">
+<div class="perfil" 
+     data-name="Alexandre Amaral" 
+     data-role="Agente" 
+     data-bio="Responsável pela gestão e organização do grupo." 
+     data-img="imagem/a.roy_27/amaral.png"
+     data-instagram="https://instagram.com/amaral"
+     data-youtube="https://youtube.com/@amaral"
+     data-spotify=""
+     data-facebook="https://facebook.com/amaral">
+  <img src="imagem/a.roy_27/amaral.png" alt="Alexandre Amaral" />
+  <h3>Alexandre Amaral</h3>
+  <p>Agente</p>
+</div>
+
+<div class="perfil" 
+     data-name="Feboy Freezer" 
+     data-role="Rapper" 
+     data-bio="Rapper da Only The Gang com estilo único no trap." 
+     data-img="imagem/user2.jpg"
+     data-instagram="https://instagram.com/feboyfreezer"
+     data-youtube="https://youtube.com/@feboyfreezer"
+     data-spotify="https://open.spotify.com/artist/xxxx"
+     data-facebook="https://facebook.com/feboyfreezer">
+  <img src="imagem/user2.jpg" alt="Feboy Freezer" />
+  <h3>Feboy Freezer</h3>
+  <p>Rapper</p>
+</div>
+
+<div class="perfil" 
+     data-name="Wisnay OG" 
+     data-role="Rapper" 
+     data-bio="Trapstar da Only The Gang, com letras profundas e energia de rua." 
+     data-img="imagem/user3.jpg"
+     data-instagram="https://instagram.com/wisnayog"
+     data-youtube="https://youtube.com/@wisnayog"
+     data-spotify="https://open.spotify.com/artist/yyyy"
+     data-facebook="https://facebook.com/wisnayog">
+  <img src="imagem/user3.jpg" alt="Wisnay OG" />
+  <h3>Wisnay OG</h3>
+  <p>Rapper</p>
+</div>
+
+<div class="perfil" 
+     data-name="Bruno Rodas" 
+     data-role="Produtor" 
+     data-bio="Produtor musical e beatmaker da Only The Gang, especialista em trap e drill." 
+     data-img="imagem/user4.jpg"
+     data-instagram="https://instagram.com/brunorodas"
+     data-youtube="https://youtube.com/@brunorodas"
+     data-spotify="https://open.spotify.com/artist/zzzz"
+     data-facebook="https://facebook.com/brunorodas">
+  <img src="imagem/user4.jpg" alt="Bruno Rodas" />
+  <h3>Bruno Rodas</h3>
+  <p>Produtor</p>
+</div>
+
+<div class="perfil" 
+     data-name="Weslay Beats" 
+     data-role="DJ / Beatmaker" 
+     data-bio="DJ e beatmaker oficial do grupo, responsável pela energia nos shows." 
+     data-img="imagem/user5.jpg"
+     data-instagram="https://instagram.com/weslaybeats"
+     data-youtube="https://youtube.com/@weslaybeats"
+     data-spotify="https://open.spotify.com/artist/kkkk"
+     data-facebook="https://facebook.com/weslaybeats">
+  <img src="imagem/weslay/Imagem do WhatsApp de 2025-09-02 à(s) 12.30.15_a65df8a9.jpg" alt="Weslay Beats" />
+  <h3>Weslay Beats</h3>
+  <p>DJ / Beatmaker</p>
+</div>
+
+</div>
+
+
+<!-- Modal escondido -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <img id="modalImg" src="" alt="Integrante" />
+    <h3 id="modalName"></h3>
+    <p id="modalRole"></p>
+    <p id="modalBio"></p>
+
+    <!-- Redes sociais -->
+    <div class="social-links" id="modalSocials"></div>
+  </div>
+</div>
+
+     
+    </main>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const sidebar = document.getElementById("sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        sidebar.classList.toggle("active");
+      });
+    </script>
+
+    <script>
+  const modal = document.getElementById("modal");
+  const closeModal = document.getElementById("closeModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalName = document.getElementById("modalName");
+  const modalRole = document.getElementById("modalRole");
+  const modalBio = document.getElementById("modalBio");
+  const modalSocials = document.getElementById("modalSocials");
+
+  document.querySelectorAll(".perfil").forEach(perfil => {
+    perfil.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = perfil.dataset.img;
+      modalName.textContent = perfil.dataset.name;
+      modalRole.textContent = perfil.dataset.role;
+      modalBio.textContent = perfil.dataset.bio;
+
+      // redes sociais
+      modalSocials.innerHTML = "";
+      if (perfil.dataset.instagram) {
+        modalSocials.innerHTML += `<a href="${perfil.dataset.instagram}" target="_blank"><i class="ai-instagram-fill"></i></a>`;
+      }
+      if (perfil.dataset.facebook) {
+        modalSocials.innerHTML += `<a href="${perfil.dataset.facebook}" target="_blank"><i class="ai-facebook-fill"></i></a>`;
+      }
+
+      if (perfil.dataset.youtube) {
+        modalSocials.innerHTML += `<a href="${perfil.dataset.youtube}" target="_blank"><i class="ai-youtube-fill"></i></a>`;
+      }
+      if (perfil.dataset.spotify) {
+        modalSocials.innerHTML += `<a href="${perfil.dataset.spotify}" target="_blank"><i class="ai-spotify-fill"></i></a>`;
+      }
+    });
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+</script>
+
+
+  </body>
+</html>

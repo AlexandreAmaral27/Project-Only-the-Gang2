@@ -1,0 +1,19 @@
+ /* Responsivo */
+      @media (max-width: 768px) {
+        .sidebar {
+          left: -250px;
+        }
+
+        .sidebar.active {
+          left: 0;
+        }
+
+        .content {
+          margin-left: 0;
+        }
+
+        .menu-btn {
+          display: flex;
+        }
+      }
+    
