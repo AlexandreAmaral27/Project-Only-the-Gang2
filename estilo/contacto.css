@@ -85,7 +85,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
       }
-
+        .contact-container a{
+        color: white;
+        text-decoration: none;
+      }
       .contact-box {
         background: rgba(255, 255, 255, 0.05);
         padding: 2rem;
